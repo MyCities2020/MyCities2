@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace MyCities.Models
+namespace MyCities2.Models
 {
     public enum StyleBatiment
     {

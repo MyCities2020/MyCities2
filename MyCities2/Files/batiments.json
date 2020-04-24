@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "nom": "Opéra national du Rhin",
+    "categorie": "Bâtiment culturel",
+    "localisation": "GrandEst",
+    "adresse": "19, Place Broglie, 67000 Strasbourg",
+    "architecte": "Villot",
+    "periode_construction": "1804-1821",
+    "style": "Il est construit dans un style néo-classique avec une façade ornée d'un péristyle colossal à colonnes ioniques.",
+    "siteweb": "https://www.operanationaldurhin.eu/fr",
+    "TypeReligieux": "",
+    "culte": "",
+    "typeCulturel": "Salle d'opéra"
+
+
+  },
+  {
+    "id": "2",
+    "nom": "Le musée d'Art moderne et contemporain de Strasbourg",
+    "categorie": "Bâtiment culturel",
+    "localisation": "GrandEst",
+    "adresse": "1, Place Hans Jean Arp, 67000 Strasbourg",
+    "architecte": "Adrien Fainsilber",
+    "periode_construction": "1973-1998",
+    "style": "Moderne",
+    "siteweb": "www.musees.strasbourg.eu/musee-d-art-moderne-et-contemporain",
+    "TypeReligieux": "",
+    "culte": "",
+    "typeCulturel": "Musée"
+
+
+  },
+  {
+    "id": "3",
+    "nom": "Cour européenne des droits de l'homme",
+    "categorie": "Bâtiment culturel",
+    "localisation": "GrandEst",
+    "adresse": "16 ALL des Droits de l Homme, 67000 Strasbourg",
+    "architecte": " Richard Rogers",
+    "periode_construction": "-1995",
+    "style": "Moderne",
+    "siteweb": "www.echr.coe.int",
+    "TypeReligieux": "",
+    "culte": "",
+    "typeCulturel": "Cour de justice internationale"
+
+
+  }
+
+]

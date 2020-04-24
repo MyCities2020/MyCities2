@@ -13,9 +13,13 @@ namespace MyCities2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        MyCitiesDBContext _ctx;
+
+
+        public HomeController(ILogger<HomeController> logger, MyCitiesDBContext ctx)
         {
             _logger = logger;
+            _ctx = ctx;
         }
 
         public IActionResult Index()
@@ -25,6 +29,7 @@ namespace MyCities2.Controllers
 
         public IActionResult Privacy()
         {
+            var batiments = _ctx.Batiments.ToList();
             return View();
         }
 

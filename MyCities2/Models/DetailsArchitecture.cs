@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyCities.Models
+namespace MyCities2.Models
 {
     public class DetailsArchitecture
     {

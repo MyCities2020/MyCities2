@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace MyCities.Models
+namespace MyCities2.Models
 {
     public class User
     {          
