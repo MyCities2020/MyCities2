@@ -7,6 +7,15 @@ namespace MyCities2.Models
 {
     public class User
     {          
+        public enum RoleUser
+    {
+        Abonné,
+        Contributeur,
+        Auteur,
+        Editeur,
+        Administrateur,
+        
+    }
             public int Id { get; set; }      
      
          
@@ -26,7 +35,7 @@ namespace MyCities2.Models
 
             [Display(Name = "MotDePasse")]
             public string Password { get; set; }
-            public string Role { get; set; }
+            public RoleUser Role { get; set; }
 
     }
     }

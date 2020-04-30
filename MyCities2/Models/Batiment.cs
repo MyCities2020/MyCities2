@@ -22,6 +22,8 @@ namespace MyCities2.Models
        
         public int Id { get; set; }
         public string Nom { get; set; }
+        public string Description { get; set; }
+        public string Categorie{ get; set; }
         public double Longitude{ get; set; }
         public double Latitude { get; set; }
         public string Adresse1 { get; set; }
