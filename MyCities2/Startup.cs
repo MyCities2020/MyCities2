@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyCities2.Models;
 
 namespace MyCities2
 {
@@ -31,7 +32,10 @@ namespace MyCities2
                 options.UseSqlServer(cs);
             });
 
-
+            
+            // API Batiment
+            services.AddDbContext<MyCitiesDBContext>(opt => opt.UseSqlServer("Batiment"));
+            services.AddControllers();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
