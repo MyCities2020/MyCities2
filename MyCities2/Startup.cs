@@ -27,7 +27,8 @@ namespace MyCities2
             services.AddControllersWithViews();
             services.AddDbContext<Models.MyCitiesDBContext>(options =>
             {
-                options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MyCities2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                var cs = Configuration.GetConnectionString("maconnexion");
+                options.UseSqlServer(cs);
             });
 
 

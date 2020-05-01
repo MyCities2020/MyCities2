@@ -21,7 +21,7 @@ namespace MyCities2.Controllers
         // GET: BatimentCulturels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BatimentCulturel_1.ToListAsync());
+            return View(await _context.BatimentsCulturel.ToListAsync());
         }
 
         // GET: BatimentCulturels/Details/5
@@ -32,7 +32,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentCulturel = await _context.BatimentCulturel_1
+            var batimentCulturel = await _context.BatimentsCulturel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (batimentCulturel == null)
             {
@@ -72,7 +72,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentCulturel = await _context.BatimentCulturel_1.FindAsync(id);
+            var batimentCulturel = await _context.BatimentsCulturel.FindAsync(id);
             if (batimentCulturel == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentCulturel = await _context.BatimentCulturel_1
+            var batimentCulturel = await _context.BatimentsCulturel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (batimentCulturel == null)
             {
@@ -138,15 +138,15 @@ namespace MyCities2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var batimentCulturel = await _context.BatimentCulturel_1.FindAsync(id);
-            _context.BatimentCulturel_1.Remove(batimentCulturel);
+            var batimentCulturel = await _context.BatimentsCulturel.FindAsync(id);
+            _context.BatimentsCulturel.Remove(batimentCulturel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BatimentCulturelExists(int id)
         {
-            return _context.BatimentCulturel_1.Any(e => e.Id == id);
+            return _context.BatimentsCulturel.Any(e => e.Id == id);
         }
     }
 }

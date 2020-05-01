@@ -21,7 +21,7 @@ namespace MyCities2.Controllers
         // GET: BatimentReligieux
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BatimentReligieux_1.ToListAsync());
+            return View(await _context.BatimentsReligieux.ToListAsync());
         }
 
         // GET: BatimentReligieux/Details/5
@@ -32,7 +32,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentReligieux = await _context.BatimentReligieux_1
+            var batimentReligieux = await _context.BatimentsReligieux
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (batimentReligieux == null)
             {
@@ -72,7 +72,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentReligieux = await _context.BatimentReligieux_1.FindAsync(id);
+            var batimentReligieux = await _context.BatimentsReligieux.FindAsync(id);
             if (batimentReligieux == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batimentReligieux = await _context.BatimentReligieux_1
+            var batimentReligieux = await _context.BatimentsReligieux
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (batimentReligieux == null)
             {
@@ -138,15 +138,15 @@ namespace MyCities2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var batimentReligieux = await _context.BatimentReligieux_1.FindAsync(id);
-            _context.BatimentReligieux_1.Remove(batimentReligieux);
+            var batimentReligieux = await _context.BatimentsReligieux.FindAsync(id);
+            _context.BatimentsReligieux.Remove(batimentReligieux);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BatimentReligieuxExists(int id)
         {
-            return _context.BatimentReligieux_1.Any(e => e.Id == id);
+            return _context.BatimentsReligieux.Any(e => e.Id == id);
         }
     }
 }

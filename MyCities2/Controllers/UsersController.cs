@@ -21,7 +21,7 @@ namespace MyCities2.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.User_1.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -32,7 +32,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User_1
+            var user = await _context.Users
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -72,7 +72,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User_1.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User_1
+            var user = await _context.Users
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -138,15 +138,15 @@ namespace MyCities2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.User_1.FindAsync(id);
-            _context.User_1.Remove(user);
+            var user = await _context.Users.FindAsync(id);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(int id)
         {
-            return _context.User_1.Any(e => e.Id == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

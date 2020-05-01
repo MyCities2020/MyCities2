@@ -11,7 +11,7 @@ namespace MyCities2.Models
      
          
             [Required(AllowEmptyStrings = false, ErrorMessage = "entrer une adresse mail valide")]
-            [Display(Name = "Courriel*", Prompt = "Veuillez saisir votre adresse mail")]
+            [Display(Name = "Courriel", Prompt = "Veuillez saisir votre adresse mail")]
             [EmailAddress(ErrorMessage = " Ce n'est pas une adresse mail valable")]
 
             //[DataType(DataType.EmailAddress)]
@@ -24,7 +24,7 @@ namespace MyCities2.Models
             [Display(Name = "Prénom")]
             public string FirstName { get; set; }
 
-            [Display(Name = "MotDePasse")]
+            [Display(Name = "Mot De Passe")]
             public string Password { get; set; }
             public string Role { get; set; }
 
