@@ -51,5 +51,18 @@ namespace MyCities2.ViewModels
 
         public List<SelectListItem> ListDeStyle { get; set; }
 
+        public string Nom
+        {
+            get { return Model.Nom; }
+            set { Model.Nom = value; }
+        }
+        
+        public string Description
+        {
+            get { return Model.Description; }
+            set { Model.Description = value; }
+        }
+        
+
     }
 }
