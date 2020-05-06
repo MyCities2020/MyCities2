@@ -17,6 +17,13 @@ namespace MyCities2.Models
         Renaissance,
         Roman,
     }
+
+    public enum TypeBatiment
+    {
+        Moderne,
+        Ghotique,
+        Classique,
+    }
     public class Batiment
     {
        
@@ -35,6 +42,7 @@ namespace MyCities2.Models
         public DateTime? Periode_construction_debut { get; set; }
         public DateTime? Periode_construction_fin { get; set; }
         public StyleBatiment Style { get; set; }
+        public TypeBatiment Type { get; set; }
         public string Siteweb { get; set; }
         public ICollection<DetailsArchitecture> Details { get; set; }
     }

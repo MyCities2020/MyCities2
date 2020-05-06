@@ -13,6 +13,12 @@ namespace MyCities2.ViewModels
         {
             culturel, Religieux
         }
+
+        public enum StyleBatiment
+        {
+
+        }
+
         public Batiment Model { get; set; }
 
         public BatimentViewModel(Batiment model)
@@ -20,6 +26,7 @@ namespace MyCities2.ViewModels
             this.Model = model;
 
             ListDeStyle = new List<SelectListItem>();
+            ListeTypeBatiment = new List<SelectListItem>();
 
             foreach(var v in Enum.GetValues(typeof(Models.StyleBatiment)))
             {
@@ -30,6 +37,15 @@ namespace MyCities2.ViewModels
             }
             //IEnumerable<Models.StyleBatiment> values = (IEnumerable <Models.StyleBatiment>) Enum.GetValues(typeof(Models.StyleBatiment));
             //ListDeStyle = values.Select(v => new SelectListItem(v.ToString(),((int)v).ToString()));
+
+            foreach (var v in Enum.GetValues(typeof(Models.TypeBatiment)))
+            {
+
+                var itm = new SelectListItem(v.ToString(), ((int)v).ToString());
+                ListeTypeBatiment.Add(itm);
+
+            }
+            
         }
 
         private TypeBatiment typebat;
@@ -39,18 +55,19 @@ namespace MyCities2.ViewModels
             get{ return typebat; } 
             set{ typebat = value; } 
         }
-        /*
-        public StyleBatiment typebat
+        
+        private StyleBatiment StyleBat;
+        public StyleBatiment Stylebat
         {
-            get { return typebat; }
-            set { typebat = value; }
+            get { return Stylebat; }
+            set { Stylebat = value; }
         }
 
-        */
+        
         //public IEnumerable<SelectListItem> ListDeStyle { get; set; }
 
         public List<SelectListItem> ListDeStyle { get; set; }
-
+        public List<SelectListItem> ListeTypeBatiment { get; set; }
         public string Nom
         {
             get { return Model.Nom; }
@@ -63,6 +80,17 @@ namespace MyCities2.ViewModels
             set { Model.Description = value; }
         }
         
+        public string Categorie
+        {
+            get { return Model.Categorie; }
+            set { Model.Categorie = value; }
+        }
+        public string Ville
+        {
+            get { return Model.Ville; }
+            set { Model.Ville = value; }
+            
+        }
 
     }
 }
