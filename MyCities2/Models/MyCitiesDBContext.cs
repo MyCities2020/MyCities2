@@ -9,7 +9,7 @@ namespace MyCities2.Models
 {
     public class MyCitiesDBContext : DbContext
     {
-        public MyCitiesDBContext(DbContextOptions<MyCitiesDBContext> options ) : base(options)
+        public MyCitiesDBContext(DbContextOptions<MyCitiesDBContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
@@ -18,12 +18,6 @@ namespace MyCities2.Models
         public DbSet<BatimentReligieux> BatimentsReligieux { get; set; } 
         public DbSet<DetailsArchitecture> DetailsArchitecture { get; set; } 
         public DbSet<User> Users { get; set; } 
-        //public DbSet<MyCities2.Models.BatimentCulturel> BatimentCulturel_1 { get; set; }
-        //public DbSet<MyCities2.Models.BatimentReligieux> BatimentReligieux_1 { get; set; }
-        //public DbSet<MyCities2.Models.DetailsArchitecture> DetailsArchitecture { get; set; }
-        //public DbSet<MyCities2.Models.User> User_1 { get; set; }
-
-
 
     }
 }

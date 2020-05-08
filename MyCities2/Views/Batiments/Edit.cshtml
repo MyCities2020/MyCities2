@@ -60,12 +60,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Periode_construction_debut" class="control-label"></label>
-                <input asp-for="Periode_construction_debut" class="form-control" />
+                <input type="date" asp-for="Periode_construction_debut" class="form-control" />
                 <span asp-validation-for="Periode_construction_debut" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Periode_construction_fin" class="control-label"></label>
-                <input asp-for="Periode_construction_fin" class="form-control" />
+                <input type="date" asp-for="Periode_construction_fin" class="form-control" />
                 <span asp-validation-for="Periode_construction_fin" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -84,11 +84,7 @@
                 <input asp-for="Siteweb" class="form-control" />
                 <span asp-validation-for="Siteweb" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Siteweb" class="control-label"></label>
-                <input asp-for="Siteweb" class="form-control" />
-                <span asp-validation-for="Siteweb" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
