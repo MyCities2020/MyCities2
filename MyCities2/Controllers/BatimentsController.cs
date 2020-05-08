@@ -116,12 +116,14 @@ namespace MyCities2.Controllers
                 return NotFound();
             }
 
-            var batiment = await _context.Batiments.FindAsync(id);
-            if (batiment == null)
-            {
-                return NotFound();
-            }
-            return View(batiment);
+            //var batiment = await _context.Batiments.FindAsync(id);
+            //if (batiment == null)
+            //{
+            //    return NotFound();
+            //}
+            //return View(batiment);
+            BatimentViewModel vm = new BatimentViewModel(new Batiment());
+            return View(vm);
         }
 
         // POST: Batiments/Edit/5
