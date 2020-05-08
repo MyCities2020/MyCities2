@@ -20,9 +20,9 @@ namespace MyCities2.Models
 
     public enum TypeBatiment
     {
-        Moderne,
-        Ghotique,
-        Classique,
+        Cathédrale,
+        Eglise,
+        Musée,
     }
     public class Batiment
     {

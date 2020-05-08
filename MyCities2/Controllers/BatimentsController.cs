@@ -20,33 +20,34 @@ namespace MyCities2.Controllers
             _context = context;
         }
 
-        //private MyCitiesDBContext db = new MyCitiesDBContext();
-        //// GET Batiments DTO
-        //public IQueryable<BatimentDTO> GetBatiments()
-        //{
-        //    var batiments = from b in db.Batiments
-        //                select new BatimentDTO()
-        //                {
-        //                    Id = b.Id,
-        //                    Nom = b.Nom, 
-        //                    Categorie = b.Categorie,
-        //                    ImageURL= b.ImageURL, 
-        //                    Ville= b.Ville
-        //                };
+        private MyCitiesDBContext db = new MyCitiesDBContext();
+        // GET Batiments DTO
+        public IQueryable<BatimentDTO> GetBatiments()
+        {
+            var batiments = from b in db.Batiments
+                            select new BatimentDTO()
+                            {
+                                Id = b.Id,
+                                Nom = b.Nom,
+                                Categorie = b.Categorie,
+                                ImageURL = b.ImageURL,
+                                Ville = b.Ville
+                            };
 
-        //    return batiments;
-        //}
+            return batiments;
+        }
 
-        //// GET BatimentDetailDTO/5
+        // GET BatimentDetailDTO/5
         //[ResponseType(typeof(BatimentDetailsDTO))]
         //public async Task<IHttpActionResult> GetBook(int id)
         //{
         //    var batiment = await db.Batiments.Include(b => b.Nom).Select(b =>
         //        new BatimentDetailsDTO()
-        //        {   Id = b.Id,
+        //        {
+        //            Id = b.Id,
         //            Description = b.Description,
-                  
-                   
+
+
         //        }).SingleOrDefaultAsync(b => b.Id == id);
         //    if (batiment == null)
         //    {
@@ -93,7 +94,8 @@ namespace MyCities2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
+        //public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
+        public async Task<IActionResult> Create( BatimentViewModel batiment)
         {
             if (ModelState.IsValid)
             {
