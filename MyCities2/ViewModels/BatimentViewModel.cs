@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MyCities2.ViewModels
 {
-    public class BatimentViewModel
+    public class BatimentViewModel : Batiment
     {
         
         public enum TypeBatiment
@@ -16,14 +16,14 @@ namespace MyCities2.ViewModels
 
         public enum StyleBatiment
         {
-
+            Gothique, Roman, Moderne
         }
 
-        public Batiment Model { get; set; }
+        public Batiment model { get; set; }
 
         public BatimentViewModel(Batiment model)
         {
-            this.Model = model;
+            this.model = model;
 
             ListDeStyle = new List<SelectListItem>();
             ListeTypeBatiment = new List<SelectListItem>();
@@ -48,20 +48,7 @@ namespace MyCities2.ViewModels
             
         }
 
-        private TypeBatiment typebat;
-
-        public TypeBatiment Typebat
-        { 
-            get{ return typebat; } 
-            set{ typebat = value; } 
-        }
         
-        private StyleBatiment StyleBat;
-        public StyleBatiment Stylebat
-        {
-            get { return Stylebat; }
-            set { Stylebat = value; }
-        }
 
         
         //public IEnumerable<SelectListItem> ListDeStyle { get; set; }
@@ -70,25 +57,39 @@ namespace MyCities2.ViewModels
         public List<SelectListItem> ListeTypeBatiment { get; set; }
         public string Nom
         {
-            get { return Model.Nom; }
-            set { Model.Nom = value; }
+            get { return model.Nom; }
+            set { model.Nom = value; }
         }
-        
+
+        private TypeBatiment typebat;
+
+        public TypeBatiment Typebat
+        {
+            get { return typebat; }
+            set { typebat = value; }
+        }
+
+        private StyleBatiment styleBat;
+        public StyleBatiment Stylebat
+        {
+            get { return styleBat; }
+            set { styleBat = value; }
+        }
         public string Description
         {
-            get { return Model.Description; }
-            set { Model.Description = value; }
+            get { return model.Description; }
+            set { model.Description = value; }
         }
         
         public string Categorie
         {
-            get { return Model.Categorie; }
-            set { Model.Categorie = value; }
+            get { return model.Categorie; }
+            set { model.Categorie = value; }
         }
         public string Ville
         {
-            get { return Model.Ville; }
-            set { Model.Ville = value; }
+            get { return model.Ville; }
+            set { model.Ville = value; }
             
         }
 

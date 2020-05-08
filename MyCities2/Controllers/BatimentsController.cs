@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyCities2.Models;
+using MyCities2.ViewModels;
 
 namespace MyCities2.Controllers
 {
@@ -45,8 +46,11 @@ namespace MyCities2.Controllers
         // GET: Batiments/Create
         public IActionResult Create()
         {
-            return View();
+            BatimentViewModel vm = new BatimentViewModel(new Batiment());
+            return View(vm);
         }
+
+
 
         // POST: Batiments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
