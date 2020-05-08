@@ -9,6 +9,10 @@ namespace MyCities2.Models
 {
     public class MyCitiesDBContext : DbContext
     {
+        public MyCitiesDBContext()
+        {
+        }
+
         public MyCitiesDBContext(DbContextOptions<MyCitiesDBContext> options ) : base(options)
         {
             Database.EnsureCreated();

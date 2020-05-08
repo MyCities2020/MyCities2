@@ -20,18 +20,18 @@ namespace MyCities2.Controllers
             _context = context;
         }
 
-        //private MyCitiesDBContext db = new MyCitiesDBContext();
-        //// GET Batiments DTO
-        //public IQueryable<BatimentDTO> GetBatiments()
+        //private mycitiesdbcontext db = new mycitiesdbcontext();
+        //// get batiments dto
+        //public iqueryable<batimentdto> getbatiments()
         //{
-        //    var batiments = from b in db.Batiments
-        //                    select new BatimentDTO()
+        //    var batiments = from b in db.batiments
+        //                    select new batimentdto()
         //                    {
-        //                        Id = b.Id,
-        //                        Nom = b.Nom,
-        //                        Categorie = b.Categorie,
-        //                        ImageURL = b.ImageURL,
-        //                        Ville = b.Ville
+        //                        id = b.id,
+        //                        nom = b.nom,
+        //                        categorie = b.categorie,
+        //                        imageurl = b.imageurl,
+        //                        ville = b.ville
         //                    };
 
         //    return batiments;
@@ -94,17 +94,17 @@ namespace MyCities2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
-        public async Task<IActionResult> Create( BatimentViewModel vm)
+        public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
+        //public async Task<IActionResult> Create(BatimentViewModel vm)
         {
-            //if (modelstate.isvalid)
-            //{
-            //    _context.add(batiment);
-            //    await _context.savechangesasync();
-            //    return redirecttoaction(nameof(index));
-            //}
-            //return view(batiment);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.Add(batiment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(batiment);
+            //return RedirectToAction("Index");
 
         }
 
