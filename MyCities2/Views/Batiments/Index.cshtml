@@ -9,6 +9,42 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<h1>Liste des batiments</h1>
+
+<div class="row card-deck">
+    @foreach (Batiment item in Model)
+    {
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div class="card-title">@item.Nom</div>
+            </div>
+
+            <div class="card-body">
+                <img class="w-25" src="~/img/@item.ImageURL" />
+
+                <div class="card-title">@item.Ville</div>
+
+            </div>
+
+            <div class="card-footer">
+               <div class="row">
+
+                @Html.ActionLink("Detail", "Details", new { id = item.Id }, new { @class = "btn btn-secondary  mr-2" })
+
+                @Html.ActionLink("supprimer", "Delete", new { id = item.Id }, new { @class = "btn btn-secondary  mr-2" })
+               
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Id }, new { @class = "btn btn-secondary  mr-2" })
+               </div>
+            </div>
+        </div>
+
+    }
+</div>
+<h1>Table des batiments</h1>
 <table class="table">
     <thead>
         <tr>
