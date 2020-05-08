@@ -20,22 +20,22 @@ namespace MyCities2.Controllers
             _context = context;
         }
 
-        private MyCitiesDBContext db = new MyCitiesDBContext();
-        // GET Batiments DTO
-        public IQueryable<BatimentDTO> GetBatiments()
-        {
-            var batiments = from b in db.Batiments
-                            select new BatimentDTO()
-                            {
-                                Id = b.Id,
-                                Nom = b.Nom,
-                                Categorie = b.Categorie,
-                                ImageURL = b.ImageURL,
-                                Ville = b.Ville
-                            };
+        //private MyCitiesDBContext db = new MyCitiesDBContext();
+        //// GET Batiments DTO
+        //public IQueryable<BatimentDTO> GetBatiments()
+        //{
+        //    var batiments = from b in db.Batiments
+        //                    select new BatimentDTO()
+        //                    {
+        //                        Id = b.Id,
+        //                        Nom = b.Nom,
+        //                        Categorie = b.Categorie,
+        //                        ImageURL = b.ImageURL,
+        //                        Ville = b.Ville
+        //                    };
 
-            return batiments;
-        }
+        //    return batiments;
+        //}
 
         // GET BatimentDetailDTO/5
         //[ResponseType(typeof(BatimentDetailsDTO))]
@@ -95,15 +95,17 @@ namespace MyCities2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
-        public async Task<IActionResult> Create( BatimentViewModel batiment)
+        public async Task<IActionResult> Create( BatimentViewModel vm)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(batiment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(batiment);
+            //if (modelstate.isvalid)
+            //{
+            //    _context.add(batiment);
+            //    await _context.savechangesasync();
+            //    return redirecttoaction(nameof(index));
+            //}
+            //return view(batiment);
+            return RedirectToAction("Index");
+
         }
 
         // GET: Batiments/Edit/5

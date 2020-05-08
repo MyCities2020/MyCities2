@@ -8,7 +8,10 @@ namespace MyCities2.ViewModels
 {
     public class BatimentViewModel : Batiment
     {
-        
+        public BatimentViewModel()
+        {
+
+        }
         public enum TypeBatiment
         {
             culturel, Religieux
@@ -48,9 +51,6 @@ namespace MyCities2.ViewModels
             
         }
 
-        
-
-        
         //public IEnumerable<SelectListItem> ListDeStyle { get; set; }
 
         public List<SelectListItem> ListDeStyle { get; set; }
@@ -80,7 +80,7 @@ namespace MyCities2.ViewModels
             get { return model.Description; }
             set { model.Description = value; }
         }
-        
+
         public string Categorie
         {
             get { return model.Categorie; }
@@ -90,7 +90,7 @@ namespace MyCities2.ViewModels
         {
             get { return model.Ville; }
             set { model.Ville = value; }
-            
+
         }
 
     }

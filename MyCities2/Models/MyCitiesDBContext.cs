@@ -9,11 +9,7 @@ namespace MyCities2.Models
 {
     public class MyCitiesDBContext : DbContext
     {
-        public MyCitiesDBContext()
-        {
-        }
-
-        public MyCitiesDBContext(DbContextOptions<MyCitiesDBContext> options) : base(options)
+        public MyCitiesDBContext(DbContextOptions<MyCitiesDBContext> options ) : base(options)
         {
             Database.EnsureCreated();
         }
@@ -22,6 +18,7 @@ namespace MyCities2.Models
         public DbSet<BatimentReligieux> BatimentsReligieux { get; set; } 
         public DbSet<DetailsArchitecture> DetailsArchitecture { get; set; } 
         public DbSet<User> Users { get; set; } 
+
 
     }
 }
