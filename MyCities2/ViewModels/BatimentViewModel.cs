@@ -7,32 +7,42 @@ using System.Linq;
 
 namespace MyCities2.ViewModels
 {
-    public class BatimentViewModel 
+
+    
+    public class BatimentViewModel
     {
-        public BatimentViewModel()
+        public BatimentViewModel() 
         {
             model = new Batiment();
+            modelBatCulturel = new BatimentCulturel();
+            
         }
-        public enum TypeBatiment
-        {
-            culturel, Religieux
-        }
+        //public enum TypeBatiment
+        //{
+        //    culturel, Religieux
+        //}
 
-        public enum StyleBatiment
-        {
-            Gothique, Roman, Moderne
-        }
+        //public enum StyleBatiment
+        //{
+        //    Gothique, Roman, Moderne
+        //}
 
+        //public enum TypeCulturel
+        //{
+        //    Gothique, Roman, Moderne
+        //}
         public Batiment model { get; set; }
-
-        public BatimentViewModel(Batiment model)
+        public BatimentCulturel modelBatCulturel { get; set; }
+        public BatimentViewModel(Batiment model, BatimentCulturel modelBatCulturel)
         {
             this.model = model;
+            this.modelBatCulturel = modelBatCulturel;
 
             ListDeStyle = new List<SelectListItem>();
             ListeTypeBatiment = new List<SelectListItem>();
+            ListeTypeCulture = new List<SelectListItem>();
 
-            foreach(var v in Enum.GetValues(typeof(Models.StyleBatiment)))
+            foreach (var v in Enum.GetValues(typeof(Models.StyleBatiment)))
             {
 
                 var itm = new SelectListItem(v.ToString(), ((int)v).ToString());
@@ -49,13 +59,22 @@ namespace MyCities2.ViewModels
                 ListeTypeBatiment.Add(itm);
 
             }
-            
+
+            foreach (var v in Enum.GetValues(typeof(Models.TypeCulturel)))
+            {
+
+                var itm = new SelectListItem(v.ToString(), ((int)v).ToString());
+                ListeTypeCulture.Add(itm);
+
+            }
         }
 
         //public IEnumerable<SelectListItem> ListDeStyle { get; set; }
 
         public List<SelectListItem> ListDeStyle { get; set; }
         public List<SelectListItem> ListeTypeBatiment { get; set; }
+
+        public List<SelectListItem> ListeTypeCulture { get; set; }
         public int Id
         {
             get { return model.Id; }
@@ -85,26 +104,26 @@ namespace MyCities2.ViewModels
             set { model.Longitude = value; }
         }
 
-        public string CP 
-        { 
-          get { return model.CP; } 
-          set { model.CP = value; } 
-        }
-        public string Architecte 
+        public string CP
         {
-            get {return model.Architecte; } 
-            set {model.Architecte = value; } 
+            get { return model.CP; }
+            set { model.CP = value; }
+        }
+        public string Architecte
+        {
+            get { return model.Architecte; }
+            set { model.Architecte = value; }
         }
         public string ImageURL { get; set; }
-        public  DateTime? Periode_construction_debut 
+        public DateTime? Periode_construction_debut
         {
             get { return model.Periode_construction_debut; }
             set { model.Periode_construction_debut = value; }
         }
         public DateTime? Periode_construction_fin
         {
-            get {return model.Periode_construction_fin; }
-            set {model.Periode_construction_fin = value; }
+            get { return model.Periode_construction_fin; }
+            set { model.Periode_construction_fin = value; }
         }
         public double Latitude
         {
@@ -119,7 +138,7 @@ namespace MyCities2.ViewModels
         }
 
         public string Adresse2
-         {
+        {
             get { return model.Adresse2; }
             set { model.Adresse2 = value; }
         }
@@ -130,7 +149,7 @@ namespace MyCities2.ViewModels
             set { model.Ville = value; }
 
         }
-       
+
         private TypeBatiment typebat;
 
         public TypeBatiment Typebat
@@ -145,12 +164,15 @@ namespace MyCities2.ViewModels
             get { return styleBat; }
             set { styleBat = value; }
         }
-
-        //public StyleBatiment Style { get; set; }
-        //public TypeBatiment Type { get; set; }
-        public string Siteweb 
-        { 
-            get {return model.Siteweb; } 
-            set {model.Siteweb = value; } }
+        public string Siteweb
+        {
+            get { return model.Siteweb; }
+            set { model.Siteweb = value; }
+        }
+        //public TypeCulturel typeCulturel
+        //{
+        //    get { return model.typeCulturel; }
+        //    set { model.typeCulturel = value; }
+        //}
     }
 }

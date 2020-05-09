@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MyCities2.Models
+namespace MyCities2API.Models
 {
     public enum StyleBatiment
     {
@@ -24,21 +24,14 @@ namespace MyCities2.Models
         Eglise,
         Musée,
     }
-
-    public enum TypeCulturel
-    {
-        ArtDéco,
-        Cinema,
-        Théatre
-    }
     public class Batiment
     {
-       
+
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Description { get; set; }
-        public string Categorie{ get; set; }
-        public double Longitude{ get; set; }
+        public string Categorie { get; set; }
+        public double Longitude { get; set; }
         public double Latitude { get; set; }
         public string Adresse1 { get; set; }
         public string Adresse2 { get; set; }
@@ -50,8 +43,9 @@ namespace MyCities2.Models
         public DateTime? Periode_construction_fin { get; set; }
         public StyleBatiment Style { get; set; }
         public TypeBatiment Type { get; set; }
-        //public TypeCulturel typeCulturel{ get; set; }
         public string Siteweb { get; set; }
-        public ICollection<DetailsArchitecture> Details { get; set; }
+        //public ICollection<DetailsArchitecture> Details { get; set; }
     }
 }
+
+

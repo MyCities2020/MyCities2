@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\BatimentDetails\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

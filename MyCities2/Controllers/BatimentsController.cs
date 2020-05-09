@@ -83,7 +83,7 @@ namespace MyCities2.Controllers
         // GET: Batiments/Create
         public IActionResult Create()
         {
-            BatimentViewModel vm = new BatimentViewModel(new Batiment());
+            BatimentViewModel vm = new BatimentViewModel(new Batiment(),new BatimentCulturel() );
             return View(vm);
         }
 
@@ -94,8 +94,8 @@ namespace MyCities2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] Batiment batiment)
-        //public async Task<IActionResult> Create(BatimentViewModel vm)
+        public async Task<IActionResult> Create([Bind("Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb,TypeCulturel")] Batiment batiment)
+        //public async Task<IActionResult> Create(BatimentViewModel vm)        
         {
             if (ModelState.IsValid)
             {
@@ -122,7 +122,7 @@ namespace MyCities2.Controllers
             //    return NotFound();
             //}
             //return View(batiment);
-            BatimentViewModel vm = new BatimentViewModel(new Batiment());
+            BatimentViewModel vm = new BatimentViewModel(new Batiment(),new BatimentCulturel() );
             return View(vm);
         }
 

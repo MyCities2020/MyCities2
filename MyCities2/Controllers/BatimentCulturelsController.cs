@@ -53,7 +53,7 @@ namespace MyCities2.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TypeCulturel,Id,Nom,Longitude,Latitude,Adresse1,Adresse2,Ville,CP,Architecte,ImageURL,Periode_construction_debut,Periode_construction_fin,Style,Siteweb")] BatimentCulturel batimentCulturel)
+        public async Task<IActionResult> Create([Bind("TypeCulturel")] BatimentCulturel batimentCulturel)
         {
             if (ModelState.IsValid)
             {
