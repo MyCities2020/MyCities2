@@ -28,7 +28,7 @@ namespace AutoShop_Shared.Services
             string result = "";
             if (typeof(T) == typeof(Batiment))
             {
-                result = System.IO.File.ReadAllText(settings.FilePath + settings.BadgesFileName);
+                result = System.IO.File.ReadAllText(settings.FilePath + settings.BatimentsFileName);
             }
             if (typeof(T) == typeof(User))
             {

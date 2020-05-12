@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,24 +21,24 @@ namespace MyCities2.Controllers
             _context = context;
         }
 
-        //private mycitiesdbcontext db = new mycitiesdbcontext();
-        //// get batiments dto
-        //public iqueryable<batimentdto> getbatiments()
-        //{
-        //    var batiments = from b in db.batiments
-        //                    select new batimentdto()
-        //                    {
-        //                        id = b.id,
-        //                        nom = b.nom,
-        //                        categorie = b.categorie,
-        //                        imageurl = b.imageurl,
-        //                        ville = b.ville
-        //                    };
+        private MyCitiesDBContext db = new MyCitiesDBContext();
+        // get batiments dto
+        public IQueryable<BatimentDTO> getbatiments()
+        {
+            var batiments = from b in db.Batiments
+                            select new BatimentDTO()
+                            {
+                                Id = b.Id,
+                                Nom = b.Nom,
+                                Categorie = b.Categorie,
+                                ImageURL = b.ImageURL,
+                                Ville = b.Ville
+                            };
 
-        //    return batiments;
-        //}
+            return batiments;
+        }
 
-        // GET BatimentDetailDTO/5
+        //GET BatimentDetailDTO/5
         //[ResponseType(typeof(BatimentDetailsDTO))]
         //public async Task<IHttpActionResult> GetBook(int id)
         //{

@@ -7,7 +7,7 @@ namespace MyCities2API.Models
      public class AppSettings
     {
         public string FilePath { get; set; }
-        public string BadgesFileName { get; set; }
+        public string BatimentsFileName { get; set; }
         public string UsersFileName { get; set; }
         public string CosmosDBUrl { get; set; }
         public string CosmosDBKey { get; set; }
