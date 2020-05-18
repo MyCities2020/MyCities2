@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyCities2.Data;
 using MyCities2.Models;
 
 namespace MyCities2
@@ -32,7 +34,13 @@ namespace MyCities2
                 options.UseSqlServer(cs);
             });
 
-            
+            // Identity
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(
+                   Configuration.GetConnectionString("LoginConnection")));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
             // API Batiment
             services.AddDbContext<MyCitiesDBContext>(opt => opt.UseSqlServer("Batiment"));
             services.AddControllers();
@@ -55,13 +63,17 @@ namespace MyCities2
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            
+           
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
