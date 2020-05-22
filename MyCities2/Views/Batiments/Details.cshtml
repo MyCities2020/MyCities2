@@ -9,91 +9,122 @@
 <div>
     <h4>Les informations disponible sur ce Batiment</h4>
     <hr />
-    <div class="container border text-center">
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Nom)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Nom)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Longitude)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Longitude)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Latitude)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Latitude)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Adresse1)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Adresse1)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Adresse2)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Adresse2)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Ville)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Ville)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.CP)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CP)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Architecte)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Architecte)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ImageURL)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Periode_construction_debut)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Periode_construction_debut)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Periode_construction_fin)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Periode_construction_fin)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Style)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Style)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Siteweb)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Siteweb)
-            </dd>
-        </dl>
+    <div class="container text-center">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Nom)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Longitude)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Longitude)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Latitude)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Latitude)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Adresse1)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Adresse1)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Adresse2)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Adresse2)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Ville)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Ville)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.CP)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CP)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Architecte)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Architecte)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.ImageURL)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.ImageURL)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Periode_construction_debut)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Periode_construction_debut)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Periode_construction_fin)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Periode_construction_fin)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Style)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Style)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayNameFor(model => model.Siteweb)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Siteweb)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+
+<br />
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editer</a> |
+    <a asp-action="Index">Retour à la liste</a>
 </div>
 
